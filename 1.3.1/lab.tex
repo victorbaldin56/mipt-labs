@@ -2,7 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T2A]{fontenc}
 \usepackage[english, russian]{babel}
-\usepackage{graphicx, float, multicol, hyperref, pgfplots}
+\usepackage{graphicx, float, multicol, hyperref, pgfplots, amsmath}
 
 \graphicspath{{pictures/}}
 
@@ -104,7 +104,7 @@
         \begin{tabular}{|c|c|c|c|c|}
         \hline
         $d_{\tiny{\mbox{пр}}}$, мм & $r$, мм & $l$, см & $h$, см & $\sigma_{\tiny{\mbox{пр}}}$, Н/мм$^2$\\ \hline
-        $0.46 \pm 0.01$            & $15 \pm 1$ & $177.6 \pm 0.5$  & $144.0\pm 0.05$   & 900\\ \hline
+        $0.46 \pm 0.01$            & $15 \pm 1$ & $177.6 \pm 0.5$  & $144.0\pm 0.5$   & 900\\ \hline
         \end{tabular}
     \end{table}
     \item Оценим, сколько грузов можно подвесить к проволоке. Для этого найдем площадь
@@ -133,13 +133,36 @@
     245.5          & 14.5   & 24.4                 & 26.5              & 26.8                 & 26.8               \\ \hline
     \end{tabular}
     \end{table}
-    \item Построим графики зависимости $F(n)$ для первого и второго эксперимента.
+    \item Построим графики зависимости $n(F)$ для первого и второго эксперимента.
     \begin{figure}[H]
         \centering
-        \caption{Графики зависимости для $F(n)$}
+        \caption{Графики зависимости для $n(F)$}
         \input{graphs/lermant.pgf}
     \end{figure}
     \end{enumerate}
+    По МНК можно найти коэффициент наклона графика $k$, который по формуле (5) равен:
+    \begin{equation}
+        k = \frac{2lh}{ESr}
+    \end{equation}
+    Отсюда
+    \begin{equation}
+        E =\frac{2lh}{kSr}
+    \end{equation}
+    В нашем случае логично использовать усредненное значение $\langle k \rangle = 1.13 \cdot
+    10^{-2}
+    $ м/Н, т. к. у нас есть график для уменьшения и увеличения нагрузки.
+    Погрешность можно рассчитать как
+    \[ \varepsilon_k = \frac{1}{k\sqrt{N - 2}}\sqrt{\frac{\langle n^2 \rangle -\langle n \rangle^2}{
+    \langle P^2 \rangle - \langle P \rangle^2} - k^2} = 0.11\]
+
+    Найдем модуль Юнга и его погрешность:
+    \[ E = 178\; \mbox{ГПа}, \]
+    \begin{equation*}
+        \varepsilon_E = \sqrt{\varepsilon_l^2 + \varepsilon_h^2 +
+    \varepsilon_k^2 + \varepsilon_S^2 + \varepsilon_r^2} \approx \sqrt{
+    \varepsilon_k^2 + \varepsilon_S^2 + \varepsilon_r^2} \approx 0.15, \\\
+    \sigma_E = E \varepsilon_E \approx 27\;\mbox{ГПа}
+    \end{equation*}
 
     \section{Определение модуля Юнга по измерениям изгиба балки}
     \subsection{Теоретические сведения}

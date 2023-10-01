@@ -2,7 +2,9 @@ import matplotlib
 from matplotlib import pyplot as plt
 import numpy as np
 import pandas as pd
-from scipy.optimize import minimize
+# from scipy.optimize import minimize
+import statistics as stat
+import math
 
 matplotlib.use("pgf")
 matplotlib.rcParams.update({
@@ -21,7 +23,7 @@ y = []
 for i in range(2, 6):
     y.append(lerm.iloc[:, i])
 
-print(y)
+# print(y)
 
 a = [0] * 2
 b = [0] * 2
@@ -54,3 +56,17 @@ plt.xlabel('$P$, N$')
 plt.ylabel('$n$, cm')
 
 plt.savefig('graphs/lermant.pgf')
+
+# arithmetic mean of k
+coeff_k = stat.mean(a)
+
+# squares
+x_sq = [P ** 2 for P in x]
+y_sq = [n ** 2 for n in y[0]]
+
+# error of coeff_k
+eps_k = 1 / (coeff_k * math.sqrt(3)) * math.sqrt((stat.mean(y_sq) - stat.mean(y[0]) ** 2
+                                                  ) / (stat.mean(x_sq) -
+                                                       stat.mean(x) ** 2) - coeff_k ** 2)
+
+print(eps_k)
