@@ -31,7 +31,7 @@ b = [0] * 2
 colors = ['red', 'blue']
 labels = ['acsending', 'descending']
 
-fig = plt.figure(figsize=(6, 4))
+fig = plt.figure(figsize=(5, 4))
 # f, (ax1, ax2) = plt.subplots(1, 2, sharey = True)
 
 for i in range(2):
