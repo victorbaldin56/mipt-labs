@@ -120,9 +120,19 @@ for i in range(1, 4):
         print('ym[{0}] = {1}'.format(idx, ym[idx]))
         plt.scatter(ym[idx], P[idx], color = colors[j])
         # print(type(ym[index]))
+        if b[j] >= 0:
+            fmt = '$y = {0:.2f}x + {1:.2f}$'.format(a[j],
+                                                   b[j])
+        else:
+            fmt = '$y = {0:.2f}x - {1:.2f}$'.format(a[j],
+                                                   -b[j])
+
         plt.plot(np.array(ym[idx]),
                  a[j] * np.array(ym[idx]) + b[j], color = colors[j],
-                 label = '$y = {0:.2f}x + {1:.2f}$'.format(a[j], b[j]))
+                 label = fmt)
+
+        print('epsilon in {0}: {1}'.format(names[i - 1],
+                                           lin_err(ym[idx], P[idx])))
 
     # graph appearance
     plt.grid(linestyle = '--')
