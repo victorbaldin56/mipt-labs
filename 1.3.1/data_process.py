@@ -107,6 +107,7 @@ print('P = {0}'.format(P))
 print('ym = {0}'.format(ym))
 names = ['tree', 'steel', 'latun']
 
+
 for i in range(1, 4):
     plt.figure(i, figsize = (5, 3))
     a = [0] * 2

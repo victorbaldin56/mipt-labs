@@ -236,7 +236,7 @@
             \caption{Графики для латунной балки}
             \input{graphs/latun.pgf}
         \end{figure}
-        \begin{table}
+        \begin{table}[H]
             \centering
             \caption{Измерения зависимости $P(y_{max})$}
             \begin{tabular}{|ccccccccc|}
@@ -274,5 +274,39 @@
             \end{tabular}
         \end{table}
 
+        \item Модуль Юнга через угловой кэффицент $\gamma$ можно
+        вычислить по формуле
+        \begin{equation}
+            E = \frac{\gamma l^3}{4ab^3}
+        \end{equation}
+        Отсюда погрешность:
+        \begin{equation*}
+            \varepsilon_E = \sqrt{\varepsilon_{\gamma}^2 + (3\varepsilon_l)^2
+            +\varepsilon_a^2 + (3\varepsilon_b)^2} \approx
+            \varepsilon_{\gamma} + 3\varepsilon_b
+        \end{equation*}
+        \item Сведем все средние значения угловых коэффицентов и модулей
+        Юнга в таблицу:
+        \begin{table}[H]
+            \centering
+            \caption{Значения модуля Юнга}
+            \begin{tabular}{|c|c|c|c|}
+            \hline
+            Материал               & Дерево & Сталь & Латунь \\ \hline
+            $\gamma$, Н/мм         & 6.65   & 7.30  & 4.04   \\ \hline
+            $\varepsilon_{\gamma}$ & 0.02   & 0.02  & 0.01   \\ \hline
+            $a$, мм                & 20.40  & 21.30 & 21.60  \\ \hline
+            $b$, мм                & 9.9    & 3.9   & 3.9    \\ \hline
+            $E$, Гпа               & 10     & 181   & 99     \\ \hline
+            $\varepsilon_E$        & 0.05   & 0.10  & 0.09   \\ \hline
+            $\sigma_E$, Гпа        & 1      & 17    & 9      \\ \hline
+            \end{tabular}
+        \end{table}
+
     \end{enumerate}
+
+    \subsection{Обсуждение результатов}
+    Достаточно сравнить полученные результаты с табличными значениями
+    модуля Юнга
+
 \end{document}
