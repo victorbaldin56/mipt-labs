@@ -3,6 +3,7 @@
 \usepackage{cmap} % поиск в PDF lusepackage[2A]{fontenc} % кодировка
 
 \usepackage[utf8]{inputenc} % кодировка исходного текста
+\usepackage[T2A]{fontenc}
 \usepackage[english,russian]{babel} % локализация и переносы
 \usepackage{amsmath, amsfonts, amssymb, amsthm,mathtools, float}
 \usepackage{ stmaryrd }
@@ -44,9 +45,9 @@
 		\varepsilon_{\mbox{\tiny{отд}}} \approx \frac{1}{\sqrt{n_i}}
 	\end{equation}
 	При проведении многочисленных опытов за $n_0$ принимается среднее арифметическое всех результатов
-	$\overline n$, а стандартная отклонение $\overline n$ от $n_0$ может быть
-	вычислена по формуле:
-	\[ \sigma_{\overline n} = \frac{1}{N} \sqrt{\sum_{i=1}^N(n_i - \overline n)^2}, \] где $N$ - количество измерений, $n_i$ - результат $i$-того измерения. Относительная же погрешность составит: \[ \varepsilon_{\overline n} = \frac{1}{\sqrt{\overline n N}}. \]
+	$\langle n \rangle$, а стандартное отклонение $\langle n \rangle$ от $n_0$ может быть
+	вычислено по формуле:
+	\[ \sigma_{\langle n \rangle} = \frac{1}{N} \sqrt{\sum_{i=1}^N(n_i - \langle n \rangle)^2}, \] где $N$ - количество измерений, $n_i$ - результат $i$-того измерения. Относительная же погрешность составит: \[ \varepsilon_{\langle n \rangle} = \frac{1}{\sqrt{\langle n \rangle N}}. \]
 	Таким образом, можно по результатам измерений можно построить гистограмму $\omega_n = f(n)$, где $\omega_n 
 	$ -- доля случаев, для которых число срабатывания счетчика за 10 с равно $n$.
 

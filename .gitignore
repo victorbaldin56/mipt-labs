@@ -9,7 +9,7 @@
 *.ipynb_checkpoints/
 .~lock*
 .idea/
-
+*.swp
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
