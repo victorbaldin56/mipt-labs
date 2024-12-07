@@ -31,4 +31,4 @@ def fit(f, x, y):
   if len(x) != len(y):
     raise "Иксов должно быть столько же, сколько и игреков"
 
-  return curve_fit(f, x, y)
+  return curve_fit(f, x, y, nan_policy='omit')
